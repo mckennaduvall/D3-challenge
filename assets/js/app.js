@@ -1,12 +1,12 @@
 // SVG wrapper dimensions are determined by the current width
 // and height of the browser window.
 var svgWidth = 1200;
-var svgHeight = 660;
+var svgHeight = 600;
 
 var margin = {
   top: 50,
   right: 50,
-  bottom: 50,
+  bottom: 85,
   left: 50
 };
 
@@ -74,12 +74,12 @@ var toolTip = d3.tip()
     .attr("class", "tooltip")
     .offset([80, -60])
     .html(function(d) {
-    return (`${d.rockband}<br>Hair length: ${d.hair_length}<br>Hits: ${d.num_hits}`);
+    return (`Age: ${d.age}<br>Smokers: ${d.smokes}`);
       });
 
 // Create tooltip in the chart
 
-chartGroup.call(toolTip);
+scatterGroup.call(toolTip);
 
 // Create event listeners to display and hide the tooltip
 
@@ -94,16 +94,16 @@ toolTip.show(data, this);
     // Create axes labels
     scatterGroup.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left + 40)
-      .attr("x", 0 - (height / 2))
+      .attr("y", 0 - margin.left + 0)
+      .attr("x", 0 - (height / 1.5))
       .attr("dy", "1em")
       .attr("class", "axisText")
-      .text("Number of Billboard 100 Hits");
+      .text("Percentage of Smokers in the US");
 
     scatterGroup.append("text")
-      .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
+      .attr("transform", `translate(${width / 2}, ${height + margin.top + 0})`)
       .attr("class", "axisText")
-      .text("Hair Metal Band Hair Length (inches)");
+      .text("Age");
   }).catch(function(error) {
     console.log(error);
   }); 
