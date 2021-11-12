@@ -4,5 +4,7 @@ Analyzed specific elements from [US Census Bureau](https://data.census.gov/cedsc
 
 Created scatter plot between two data variables:
 
+- smoker vs. age 
+
 Using D3, created scatter plot that represents each state with abbreviated circle elements.
 
